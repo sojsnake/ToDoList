@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #ced3df;
+}
+
+body.dark-mode {
+  /* 페이지 전체에 다크모드 적용
+  글자 색은 화이트로 */
+  background-color: #222;
+  color: #fff;
+}
+
+/* section */
+.container {
+  width: 80%;
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #f1f0f7;
+  -webkit-box-shadow: 9px 11px 5px 0px rgba(125, 124, 125, 1);
+  -moz-box-shadow: 9px 11px 5px 0px rgba(125, 124, 125, 1);
+  box-shadow: 9px 11px 5px 0px rgba(125, 124, 125, 1);
+  border-radius: 20px;
+}
+
+body.dark-mode .container {
+  /* 핸드폰 모양 안쪽에 다크모드. 페이지 색보다 진하게 */
+  background-color: #333;
+}
+
+/* header */
+.header {
+  /* 다크모드 버튼 위치 정하기 위해서 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display flex로 수평 배치
+  justify-content로 제목과 다크모드 중앙배치
+  align-item으로 세로 정렬 중앙으로 */
+
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  background: rgba(237, 193, 211);
+  background: linear-gradient(
+    166deg,
+    rgba(237, 193, 211, 1) 0%,
+    rgba(219, 192, 216, 1) 35%,
+    rgba(127, 188, 242, 1) 100%
+  );
+  border-radius: 20px 20px 0 0;
+  position: relative;
+}
+
+/* ul */
+.items {
+  padding: 1rem;
+  height: 500px;
+  overflow-y: auto;
+}
+/* li */
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  /* align-items: center; */
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.item:hover {
+  background-color: #eae9ee;
+}
+/* li 체크 클릭됬을 때 */
+.item.item_done span {
+  opacity: 0.1;
+  text-decoration: line-through;
+}
+.item span {
+  flex: 1;
+  /* text-align: left; */
+}
+
+/*  아이콘 */
+.fa-check,
+.fa-trash-can {
+  font-size: 16px;
+  transition: 0.3s;
+}
+.fa-check:hover {
+  color: dodgerblue;
+}
+.fa-trash-can:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.footer {
+  background: rgba(237, 193, 211);
+  background: linear-gradient(
+    166deg,
+    rgba(237, 193, 211, 1) 0%,
+    rgba(219, 192, 216, 1) 35%,
+    rgba(127, 188, 242, 1) 100%
+  );
+  border-radius: 0 0 20px 20px;
+  position: relative;
+}
+
+.footer_input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 1rem 1rem 1.25rem;
+}
+
+.footer_date {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  background-color: #ced3df;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+.fa-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  font-size: 1.5rem;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  transition: 0.3s;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.fa-plus:hover {
+  transform: translateY(-15px) scale(1.1);
+  /* scale만 쓰면 원래 것도 사라져서 작성해줘야함 */
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  /* 부모인 header에 relative 써주기 */
+  right: 1rem;
+  /* 오른쪽 끝에서 1rem 떨어진 위치 */
+  top: 50%;
+  /* 부모의 세로 높이의 50% 지점 */
+  transform: translateY(-50%);
+  /* 버튼의 중간이 세로 50%에 오도록 조정 */
+
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
